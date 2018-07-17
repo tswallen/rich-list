@@ -369,9 +369,16 @@ export class AppComponent implements OnInit {
   private searchTerms = new Subject<string>();
   myControl = new FormControl();
 
-  selectedCurrency = 1;
+  selectedCurrency = 1
 
-  filters: string[] = ['Australia', 'Brazil', 'Canada', 'France', 'Germany', 'India', 'Ireland', 'Israel', 'Italy', 'Netherlands', 'Poland', 'Saudi Arabia', 'South Africa', 'Tunisia', 'United Kingdom', 'United States'];
+  currencies = [
+    { value: 1, viewValue: 'USD' },
+    { value: 0.78, viewValue: 'AUD' },
+    { value: 0.92, viewValue: 'EUR' }
+  ]
+  selectedFilter = 'Australia'
+  
+  filters = ['Australia', 'Brazil', 'Canada', 'France', 'Germany', 'India', 'Ireland', 'Israel', 'Italy', 'Netherlands', 'Poland', 'Saudi Arabia', 'South Africa', 'Tunisia', 'United Kingdom', 'United States'];
 
   displayedColumns: string[] = ['rank', 'name', 'netWorth', 'age', 'country'];
   dataSource = new MatTableDataSource(this.people);

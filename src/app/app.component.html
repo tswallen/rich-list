@@ -18,9 +18,9 @@
 <!-- Filters -->
 <mat-form-field>
   <mat-select placeholder="Currency" [(value)]="selectedCurrency">
-    <mat-option value=1>USD</mat-option>
-    <mat-option value=0.78>AUD</mat-option>
-    <mat-option value=0.92>EUR</mat-option>
+    <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+      {{currency.viewValue}}
+    </mat-option>
   </mat-select>
 </mat-form-field>
 
@@ -38,6 +38,7 @@
       {{person.name}}
     </mat-option>
   </mat-autocomplete>
+  <mat-icon matSuffix>search</mat-icon>
 </mat-form-field>
 
 <!-- Table -->
